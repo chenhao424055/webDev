@@ -100,3 +100,20 @@ var demo=[
       }
       return a
   }
+  
+  function getArr (arr) {
+    var u="<ul>"
+      for(var i=0;i<arr.length;i++){
+       
+        
+         u += '<li>'+"<a>"+arr[i].name+"</a>";
+         u +="</li>"
+         var blog=arr[i].hasOwnProperty('son');
+         if(blog){
+            u +=getArr(arr[i].son) ;
+         }
+         
+      }
+      u+="</ul>"
+      return u
+  }
